@@ -4,3 +4,5 @@
 [] style needs to change after task marked complete
 [] delete button needed for each task
 [] need to setup database.sql file to be created later by another person
+[] display tasks properly on DOM
+[] make it look cool
