@@ -35,7 +35,19 @@ router.post('/', (req, res) => {
 
 
 // PUT for changing complete_status
-
+router.put('/:id', (req, res) => {
+    console.log('req.body.complete_status', req.body.complete_status);
+    
+        let queryText = `UPDATE "tasks" SET "complete_status" = 'true' WHERE "id" = $1;`;
+    
+        pool.query(queryText,[req.params.id]).then((result) => {
+            console.log('result from PUT', result);
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('error in PUT request', error);
+            res.sendStatus(500);
+        });
+});
 
 
 

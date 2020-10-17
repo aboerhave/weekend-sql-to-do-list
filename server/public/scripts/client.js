@@ -27,6 +27,7 @@ function submitTask() {
     }).then(function(response) {
         console.log('response', response);
         getAllTasks();
+        clearInputs();
     }).catch(function(error) {
         console.log('error in POST', error);
     });
@@ -53,13 +54,16 @@ function printResults(array) {
     $('#displayTasks').empty();
     for( task of tasks) {
         $('#displayTasks').append(`
-            <tr data-id=${task.id}>    
+            <tr data-id=${task.id} cl>    
                 <td>${task.task_description}</td>
                 <td>${task.complete_status}</td>
-                <td><button class="editBtn">Task Complete</button></td>
+                <td id="row${task.id}"></td>
                 <td><button class="deleteBtn">Delete Task</button></td>
             </tr>
         `);
+        if(task.complete_status === false) {
+            $(`#row${task.id}`).append(`<button class="editBtn">Task Complete</button>`)
+        }
     }
 }
 
@@ -71,7 +75,20 @@ function printResults(array) {
 function changeStatus() {
     let taskId = $(this).closest('tr').data('id');
     console.log('edit button clicked', taskId);
+    let dataToSend = {complete_status: 'true'};
     
+    // need to make ajax request for editing db
+    // button will be clicked if task is complete
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/${taskId}`,
+        data: dataToSend
+    }).then(function(response) {
+        console.log('response', response);
+        getAllTasks();
+    }).catch(function(error) {
+        console.log('error in PUT request', error); 
+    });
 }
 
 
@@ -97,4 +114,7 @@ function deleteFunction() {
     });
 }
 
-
+// function to clear input box after task is submitted
+function clearInputs() {
+    $('#taskInput').val('');
+}
