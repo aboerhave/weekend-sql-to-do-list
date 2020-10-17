@@ -53,16 +53,25 @@ function printResults(array) {
     let tasks = array;
     $('#displayTasks').empty();
     for( task of tasks) {
-        $('#displayTasks').append(`
-            <tr data-id=${task.id} cl>    
-                <td>${task.task_description}</td>
-                <td>${task.complete_status}</td>
-                <td id="row${task.id}"></td>
-                <td><button class="deleteBtn">Delete Task</button></td>
-            </tr>
-        `);
-        if(task.complete_status === false) {
-            $(`#row${task.id}`).append(`<button class="editBtn">Task Complete</button>`)
+        if(task.complete_status == false) {
+            $('#displayTasks').append(`
+                <tr >    
+                    <td>${task.task_description}</td>
+                    <td>${task.complete_status}</td>
+                    <td><button class="editBtn">Task Complete</button></td>
+                    <td><button class="deleteBtn">Delete Task</button></td>
+                </tr>
+            `);
+        }
+        else if (task.complete_status == true) {
+            $('#displayTasks').append(`
+                <tr class="done">    
+                    <td>${task.task_description}</td>
+                    <td>${task.complete_status}</td>
+                    <td></td>
+                    <td><button class="deleteBtn">Delete Task</button></td>
+                </tr>
+            `);
         }
     }
 }
