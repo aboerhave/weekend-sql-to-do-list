@@ -26,7 +26,7 @@ function submitTask() {
         data: taskObject
     }).then(function(response) {
         console.log('response', response);
-        
+        getAllTasks();
     }).catch(function(error) {
         console.log('error in POST', error);
     });
@@ -69,7 +69,8 @@ function printResults(array) {
 // PUT request
 
 function changeStatus() {
-    console.log('edit button clicked');
+    let taskId = $(this).closest('tr').data('id');
+    console.log('edit button clicked', taskId);
     
 }
 
@@ -82,8 +83,18 @@ function changeStatus() {
 
 // DELETE request
 function deleteFunction() {
-    console.log('delete button clicked');
-    
+    let taskId = $(this).closest('tr').data('id');
+    console.log('delete button clicked', taskId);
+
+    $.ajax({
+        method: 'DELETE',
+        url: `tasks/${taskId}`
+    }).then(function(response) {
+        console.log('response', response);
+        getAllTasks();        
+    }).catch(function(error) {
+        console.log('error', error);  
+    });
 }
 
 
