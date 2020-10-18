@@ -40,13 +40,22 @@ th:last-child {
 
 tr:last-child td:first-child {
     border: 1px solid #000;
-    /* border-bottom-left-radius: 8px; */
     border-collapse: collapse;
 }
 
 tr:last-child td:last-child {
     border: 1px solid #000;
-    /* border-bottom-right-radius: 8px; */
     border-collapse: collapse;
 }
 
+.left th {
+    background-color: orange;
+}
+
+.center th {
+    background-color: yellow;
+}
+
+.right th {
+    background-color: green;
+}
