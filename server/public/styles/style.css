@@ -1,5 +1,7 @@
 body {
     /* background-color: rgb(201, 248, 248); */
+    background-image: url('background.png');
+    background-size: cover;
 }
 
 h1 {
@@ -7,11 +9,13 @@ h1 {
 }
 .done {
     text-decoration: line-through;
-    /* background-color: rgb(147, 224, 147); */
+    /* background-color: rgb(62, 207, 62); */
 }
 
 .incomplete {
-    /* background-color: rgb(233, 157, 157); */
+    /* background-color: rgb(216, 63, 63); */
+    /* color: white; */
+    color: red;
 }
 
 /* .column {
@@ -26,39 +30,15 @@ h2 {
 th {
     background-color: white;
 }
-/* th, td {
-    border: 1px solid #000;
-    border-collapse: collapse;
-}
-th:first-child {
-    border: 1px solid #000;
-    border-top-left-radius: 8px;
-    border-collapse: collapse;
-}
-th:last-child {
-    border: 1px solid #000;
-    border-top-right-radius: 8px;
-    border-collapse: collapse;
+
+#table1 th {
+    background-color: rgb(248, 188, 77);
 }
 
-tr:last-child td:first-child {
-    border: 1px solid #000;
-    border-collapse: collapse;
+#table2 th {
+    background-color: rgb(252, 252, 39);
 }
 
-tr:last-child td:last-child {
-    border: 1px solid #000;
-    border-collapse: collapse;
-} */
-
-#left th {
-    background-color: orange;
-}
-
-#center th {
-    background-color: yellow;
-}
-
-#right th {
-    background-color: green;
+#table3 th {
+    background-color: rgb(90, 230, 90);
 }

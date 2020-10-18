@@ -64,7 +64,7 @@ function printResults(array) {
         let table = task.priority;
         if(task.complete_status == false) {
             $(`#displayTasks${table}`).append(`
-                <tr data-id=${task.id} class="incomplete warning">    
+                <tr data-id=${task.id} class="incomplete">    
                     <td>${task.task_description}</td>
                     <td>${task.category}</td>
                     <td><button class="editBtn btn btn-success btn-sm">Task Complete</button></td>
@@ -74,7 +74,7 @@ function printResults(array) {
         }
         else if (task.complete_status == true) {
             $(`#displayTasks${table}`).append(`
-                <tr data-id=${task.id} class="done success">    
+                <tr data-id=${task.id} class="done">    
                     <td>${task.task_description}</td>
                     <td>${task.category}</td>
                     <td></td>

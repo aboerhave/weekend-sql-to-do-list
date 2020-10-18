@@ -14,32 +14,42 @@
 <body>
     <h1>To Do List</h1>
 
+                            <!-- input stuff -->
     <div class="container">
-        <label for="taskInput">New Task to be Completed</label>
-        <input type="text" id="taskInput">
-        <label for="taskTypeInput">Task Category</label>
-        <select id="taskTypeInput" >
-            <option value="work">Work</option>
-            <option value="home">Home</option>
-            <option value="family">Family</option>
-            <option value="friends">Friends</option>
-            <option value="other">Other</option>
-        </select> 
-        <label for="taskPriorityInput">Task Category</label>
-        <select id="taskPriorityInput" >
-            <option value="Urgent">Urgent</option>
-            <option value="Moderate">Moderate</option>
-            <option value="Low">Low</option>
-        </select>
-        <button id="taskSubmitBtn" class="btn btn-primary btn-sm">Submit New Task</button>
+            <div class="col-sm-1"></div>    <!-- extra space -->
+            <div class="form-group">
+                <label for="taskInput">New Task to be Completed</label>
+                <input type="text" id="taskInput" class="form-control">
+            </div>  
+
+            <div class="form-group">
+                <label for="taskTypeInput">Task Category</label>
+                <select id="taskTypeInput" >
+                    <option value="Self">Self</option>
+                    <option value="Work">Work</option>
+                    <option value="Home">Home</option>
+                    <option value="Family">Family</option>
+                    <option value="Friends">Friends</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>    
+            <div class="form-group">
+                <label for="taskPriorityInput">Task Category</label>
+                <select id="taskPriorityInput" >
+                    <option value="Urgent">Urgent</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <button id="taskSubmitBtn" class="btn btn-primary btn-sm">Submit New Task</button>
     </div>
 
     <div class="container">    
-        <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-10">  <!-- div for first table-->
+        <div class="row">   <!-- one row for first table -->
+            <div class="col-sm-1"></div>    <!-- extra space -->
+            <div class="col-sm-10">  <!-- div for first table -->
                 <h2>Urgent Tasks</h2>
-                <table class="table">
+                <table class="table" id="table1">
                     <thead>
                         <tr >
                             <th>Task Description</th>
@@ -57,7 +67,7 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-10">  <!-- div for second table-->
                 <h2>Moderate Priority Tasks</h2>
-                <table class="table table-condensed">
+                <table class="table" id="table2">
                     <thead>
                         <tr>
                             <th class="col-sm-1">Task Description</th>
@@ -75,7 +85,7 @@
             <div class="col-sm-1"></div>
             <div class="col-lg-10">  <!-- div for third table-->
                 <h2>Low Priority Tasks</h2>
-                <table class="table table-condensed">
+                <table class="table" id="table3">
                     <thead>
                         <tr>
                             <th class="col-sm-1">Task Description</th>
