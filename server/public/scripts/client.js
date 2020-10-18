@@ -64,11 +64,11 @@ function printResults(array) {
         let table = task.priority;
         if(task.complete_status == false) {
             $(`#displayTasks${table}`).append(`
-                <tr data-id=${task.id} class="incomplete">    
+                <tr data-id=${task.id} class="incomplete warning">    
                     <td>${task.task_description}</td>
                     <td>${task.category}</td>
-                    <td><button class="editBtn">Task Complete</button></td>
-                    <td><button class="deleteBtn">Delete Task</button></td>
+                    <td><button class="editBtn btn btn-success btn-sm">Task Complete</button></td>
+                    <td><button class="deleteBtn btn btn-warning btn-sm">Delete Task</button></td>
                 </tr>
             `);
         }
@@ -78,7 +78,7 @@ function printResults(array) {
                     <td>${task.task_description}</td>
                     <td>${task.category}</td>
                     <td></td>
-                    <td><button class="deleteBtn">Delete Task</button></td>
+                    <td><button class="deleteBtn btn btn-warning btn-sm">Delete Task</button></td>
                 </tr>
             `);
         }

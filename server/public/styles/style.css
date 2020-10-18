@@ -1,14 +1,17 @@
 body {
-    background-color: rgb(201, 248, 248);
+    /* background-color: rgb(201, 248, 248); */
 }
 
+h1 {
+    text-align: center;
+}
 .done {
     text-decoration: line-through;
     /* background-color: rgb(147, 224, 147); */
 }
 
 .incomplete {
-    background-color: rgb(233, 157, 157);
+    /* background-color: rgb(233, 157, 157); */
 }
 
 /* .column {
@@ -23,7 +26,7 @@ h2 {
 th {
     background-color: white;
 }
-th, td {
+/* th, td {
     border: 1px solid #000;
     border-collapse: collapse;
 }
@@ -46,16 +49,16 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
     border: 1px solid #000;
     border-collapse: collapse;
-}
+} */
 
-.left th {
+#left th {
     background-color: orange;
 }
 
-.center th {
+#center th {
     background-color: yellow;
 }
 
-.right th {
+#right th {
     background-color: green;
 }

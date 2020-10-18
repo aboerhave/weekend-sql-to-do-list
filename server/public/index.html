@@ -14,7 +14,7 @@
 <body>
     <h1>To Do List</h1>
 
-    <div>
+    <div class="container">
         <label for="taskInput">New Task to be Completed</label>
         <input type="text" id="taskInput">
         <label for="taskTypeInput">Task Category</label>
@@ -31,16 +31,17 @@
             <option value="Moderate">Moderate</option>
             <option value="Low">Low</option>
         </select>
-        <button id="taskSubmitBtn">Submit New Task</button>
+        <button id="taskSubmitBtn" class="btn btn-primary btn-sm">Submit New Task</button>
     </div>
 
-    <div class="container-fluid">    
+    <div class="container">    
         <div class="row">
-            <div id="left" class="column" class="col-sm-12 col-med-4">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">  <!-- div for first table-->
                 <h2>Urgent Tasks</h2>
                 <table class="table">
                     <thead>
-                        <tr>
+                        <tr >
                             <th>Task Description</th>
                             <!-- <th>Completion Status</th> -->
                             <th>Category</th>
@@ -48,40 +49,43 @@
                             <th>Delete Task</th>
                         </tr>
                     </thead>
-                    <tbody id="displayTasksUrgent">
-                    </tbody>
+                    <tbody id="displayTasksUrgent"></tbody>
                 </table>
             </div>
-            <div id="center" class="column" class="col-sm-12 col-med-4">
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">  <!-- div for second table-->
                 <h2>Moderate Priority Tasks</h2>
-                <table class="table">
+                <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>Task Description</th>
+                            <th class="col-sm-1">Task Description</th>
                             <!-- <th>Completion Status</th> -->
-                            <th>Category</th>
-                            <th>Is Task Complete?</th>
-                            <th>Delete Task</th>
+                            <th class="col-sm-1">Category</th>
+                            <th class="col-sm-1">Is Task Complete?</th>
+                            <th class="col-sm-1">Delete Task</th>
                         </tr>
                     </thead>
-                    <tbody id="displayTasksModerate">
-                    </tbody>
+                    <tbody id="displayTasksModerate"></tbody>
                 </table>
             </div>
-            <div id="right" class="column" class="col-sm-12 col-med-4">
+        </div>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-lg-10">  <!-- div for third table-->
                 <h2>Low Priority Tasks</h2>
-                <table class="table">
+                <table class="table table-condensed">
                     <thead>
                         <tr>
-                            <th>Task Description</th>
+                            <th class="col-sm-1">Task Description</th>
                             <!-- <th>Completion Status</th> -->
-                            <th>Category</th>
-                            <th>Is Task Complete?</th>
-                            <th>Delete Task</th>
+                            <th class="col-sm-1">Category</th>
+                            <th class="col-sm-1">Is Task Complete?</th>
+                            <th class="col-sm-1">Delete Task</th>
                         </tr>
                     </thead>
-                    <tbody id="displayTasksLow">
-                    </tbody>
+                    <tbody id="displayTasksLow"></tbody>
                 </table>
             </div>
         </div>
