@@ -8,8 +8,9 @@ h1 {
     text-align: center;
 }
 .done {
-    text-decoration: line-through;
+    /* text-decoration: line-through; */
     /* background-color: rgb(62, 207, 62); */
+    color: blue;
 }
 
 .incomplete {
@@ -18,11 +19,21 @@ h1 {
     color: red;
 }
 
-/* .column {
-    width: 30%;
-    float: left;
-    margin: 1.666667%;
-} */
+table {
+    font-size: 1rem;
+}
+p {
+    position: relative;
+    /* display: inline-block */
+}
+
+span {
+    position: absolute;
+    width: 100%;
+    border-top: 1px solid red;
+    left: 0;
+    top: 50%;    
+}
 
 h2 {
     text-align: center;

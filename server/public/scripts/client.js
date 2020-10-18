@@ -75,8 +75,8 @@ function printResults(array) {
         else if (task.complete_status == true) {
             $(`#displayTasks${table}`).append(`
                 <tr data-id=${task.id} class="done">    
-                    <td>${task.task_description}</td>
-                    <td>${task.category}</td>
+                    <td><p>${task.task_description}<span></span></p></td>
+                    <td><p>${task.category}<span></span></p></td>
                     <td></td>
                     <td><button class="deleteBtn btn btn-warning btn-sm">Delete Task</button></td>
                 </tr>
