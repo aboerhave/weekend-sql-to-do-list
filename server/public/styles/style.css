@@ -1,3 +1,16 @@
 .done {
     text-decoration: line-through;
 }
+
+
+
+
+.column {
+    width: 30%;
+    float: left;
+    margin: 1.666667%;
+}
+
+table {
+    border: 1px solid black;
+}
