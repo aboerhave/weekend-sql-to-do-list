@@ -66,7 +66,6 @@ function printResults(array) {
             $(`#displayTasks${table}`).append(`
                 <tr data-id=${task.id} class="incomplete">    
                     <td>${task.task_description}</td>
-                    <td>${task.complete_status}</td>
                     <td>${task.category}</td>
                     <td><button class="editBtn">Task Complete</button></td>
                     <td><button class="deleteBtn">Delete Task</button></td>
@@ -75,9 +74,8 @@ function printResults(array) {
         }
         else if (task.complete_status == true) {
             $(`#displayTasks${table}`).append(`
-                <tr data-id=${task.id} class="done">    
+                <tr data-id=${task.id} class="done success">    
                     <td>${task.task_description}</td>
-                    <td>${task.complete_status}</td>
                     <td>${task.category}</td>
                     <td></td>
                     <td><button class="deleteBtn">Delete Task</button></td>
@@ -140,3 +138,34 @@ function clearInputs() {
     $('#taskTypeInput').val('');
     $('#taskPriorityInput').val('');
 }
+
+
+
+
+// Extra stuff
+
+// for( task of tasks) {
+//     let table = task.priority;
+//     if(task.complete_status == false) {
+//         $(`#displayTasks${table}`).append(`
+//             <tr data-id=${task.id} class="incomplete">    
+//                 <td>${task.task_description}</td>
+//                 <td>${task.complete_status}</td>
+//                 <td>${task.category}</td>
+//                 <td><button class="editBtn">Task Complete</button></td>
+//                 <td><button class="deleteBtn">Delete Task</button></td>
+//             </tr>
+//         `);
+//     }
+//     else if (task.complete_status == true) {
+//         $(`#displayTasks${table}`).append(`
+//             <tr data-id=${task.id} class="done">    
+//                 <td>${task.task_description}</td>
+//                 <td>${task.complete_status}</td>
+//                 <td>${task.category}</td>
+//                 <td></td>
+//                 <td><button class="deleteBtn">Delete Task</button></td>
+//             </tr>
+//         `);
+//     }
+// }
