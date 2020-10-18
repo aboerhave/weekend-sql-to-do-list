@@ -4,9 +4,13 @@ $(document).ready(onReady);
 
 function onReady() {
     // click event listeners
-    $('#taskSubmitBtn').on('click', submitTask);
-    $('#displayTasks').on('click', '.editBtn', changeStatus);
-    $('#displayTasks').on('click', '.deleteBtn', deleteFunction);
+    $('#taskSubmitBtn').on('click', submitTask);   
+    $('#displayTasksUrgent').on('click', '.editBtn', changeStatus);
+    $('#displayTasksUrgent').on('click', '.deleteBtn', deleteFunction);
+    $('#displayTasksModerate').on('click', '.editBtn', changeStatus);
+    $('#displayTasksModerate').on('click', '.deleteBtn', deleteFunction);
+    $('#displayTasksLow').on('click', '.editBtn', changeStatus);
+    $('#displayTasksLow').on('click', '.deleteBtn', deleteFunction);
     getAllTasks();
 }
 
@@ -17,7 +21,8 @@ function submitTask() {
     let taskObject = {
         task_description: $('#taskInput').val(),
         complete_status: 'false',
-        taskType: $('#taskTypeInput').val()
+        taskType: $('#taskTypeInput').val(),
+        priority: $('#taskPriorityInput').val()
     };
     console.log('taskObject', taskObject);
 
@@ -52,10 +57,13 @@ function getAllTasks() {
 
 function printResults(array) {
     let tasks = array;
-    $('#displayTasks').empty();
-    for (task of tasks) {
-        if (task.complete_status == false) {
-            $('#displayTasks').append(`
+    $('#displayTasksUrgent').empty();
+    $('#displayTasksModerate').empty();
+    $('#displayTasksLow').empty();
+    for( task of tasks) {
+        let table = task.priority;
+        if(task.complete_status == false) {
+            $(`#displayTasks${table}`).append(`
                 <tr data-id=${task.id} class="incomplete">    
                     <td>${task.task_description}</td>
                     <td>${task.complete_status}</td>
@@ -66,7 +74,7 @@ function printResults(array) {
             `);
         }
         else if (task.complete_status == true) {
-            $('#displayTasks').append(`
+            $(`#displayTasks${table}`).append(`
                 <tr data-id=${task.id} class="done">    
                     <td>${task.task_description}</td>
                     <td>${task.complete_status}</td>
@@ -129,4 +137,6 @@ function deleteFunction() {
 // function to clear input box after task is submitted
 function clearInputs() {
     $('#taskInput').val('');
+    $('#taskTypeInput').val('');
+    $('#taskPriorityInput').val('');
 }
