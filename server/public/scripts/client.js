@@ -55,7 +55,7 @@ function printResults(array) {
     for( task of tasks) {
         if(task.complete_status == false) {
             $('#displayTasks').append(`
-                <tr >    
+                <tr data-id=${task.id} class="incomplete">    
                     <td>${task.task_description}</td>
                     <td>${task.complete_status}</td>
                     <td><button class="editBtn">Task Complete</button></td>
@@ -65,7 +65,7 @@ function printResults(array) {
         }
         else if (task.complete_status == true) {
             $('#displayTasks').append(`
-                <tr class="done">    
+                <tr data-id=${task.id} class="done">    
                     <td>${task.task_description}</td>
                     <td>${task.complete_status}</td>
                     <td></td>
