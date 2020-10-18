@@ -11,79 +11,84 @@
     <title>To Do List</title>
 </head>
 <body>
-        <h1>To Do List</h1>
+    <h1>To Do List</h1>
 
-        <div>
-            <label for="taskInput">New Task to be Completed</label>
-            <input type="text" id="taskInput">
-            <label for="taskTypeInput">Task Category</label>
-            <select id="taskTypeInput" >
-                <option value="work">Work</option>
-                <option value="home">Home</option>
-                <option value="family">Family</option>
-                <option value="friends">Friends</option>
-                <option value="other">Other</option>
-            </select> 
-            <label for="taskPriorityInput">Task Category</label>
-            <select id="taskPriorityInput" >
-                <option value="Urgent">Urgent</option>
-                <option value="Moderate">Moderate</option>
-                <option value="Low">Low</option>
-            </select>
-            <button id="taskSubmitBtn">Submit New Task</button>
-        </div>
+    <div>
+        <label for="taskInput">New Task to be Completed</label>
+        <input type="text" id="taskInput">
+        <label for="taskTypeInput">Task Category</label>
+        <select id="taskTypeInput" >
+            <option value="work">Work</option>
+            <option value="home">Home</option>
+            <option value="family">Family</option>
+            <option value="friends">Friends</option>
+            <option value="other">Other</option>
+        </select> 
+        <label for="taskPriorityInput">Task Category</label>
+        <select id="taskPriorityInput" >
+            <option value="Urgent">Urgent</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Low">Low</option>
+        </select>
+        <button id="taskSubmitBtn">Submit New Task</button>
+    </div>
 
-        <div id="left" class="column">
-            <h2>Urgent Tasks</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Task Description</th>
-                        <th>Completion Status</th>
-                        <th>Category</th>
-                        <th>Is Task Complete?</th>
-                        <th>Delete Task</th>
-                    </tr>
-                </thead>
-                <tbody id="displayTasksUrgent">
-                </tbody>
-            </table>
+    <div class="container-fluid">    
+        <div class="row">
+            <div id="left" class="column" class="col-sm-12">
+                <h2>Urgent Tasks</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task Description</th>
+                            <th>Completion Status</th>
+                            <th>Category</th>
+                            <th>Is Task Complete?</th>
+                            <th>Delete Task</th>
+                        </tr>
+                    </thead>
+                    <tbody id="displayTasksUrgent">
+                    </tbody>
+                </table>
+            </div>
+            <div id="center" class="column" class="col-sm-12">
+                <h2>Moderate Priority Tasks</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task Description</th>
+                            <th>Completion Status</th>
+                            <th>Category</th>
+                            <th>Is Task Complete?</th>
+                            <th>Delete Task</th>
+                        </tr>
+                    </thead>
+                    <tbody id="displayTasksModerate">
+                    </tbody>
+                </table>
+            </div>
+            <div id="right" class="column" class="col-sm-12">
+                <h2>Low Priority Tasks</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Task Description</th>
+                            <th>Completion Status</th>
+                            <th>Category</th>
+                            <th>Is Task Complete?</th>
+                            <th>Delete Task</th>
+                        </tr>
+                    </thead>
+                    <tbody id="displayTasksLow">
+                    </tbody>
+                </table>
+            </div>
         </div>
-        <div id="center" class="column">
-            <h2>Moderate Priority Tasks</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Task Description</th>
-                        <th>Completion Status</th>
-                        <th>Category</th>
-                        <th>Is Task Complete?</th>
-                        <th>Delete Task</th>
-                    </tr>
-                </thead>
-                <tbody id="displayTasksModerate">
-                </tbody>
-            </table>
-        </div>
-        <div id="right" class="column">
-            <h2>Low Priority Tasks</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Task Description</th>
-                        <th>Completion Status</th>
-                        <th>Category</th>
-                        <th>Is Task Complete?</th>
-                        <th>Delete Task</th>
-                    </tr>
-                </thead>
-                <tbody id="displayTasksLow">
-                </tbody>
-            </table>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    </body>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+</body>
 </html>
