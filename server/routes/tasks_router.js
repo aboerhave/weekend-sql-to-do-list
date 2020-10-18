@@ -19,10 +19,10 @@ router.get('/', (req, res) => {
 
 // POST request to take new task in to database
 router.post('/', (req, res) => {
-    let queryText = `INSERT INTO "tasks"("task_description", "complete_status")
-    VALUES($1, $2);`;
+    let queryText = `INSERT INTO "tasks"("task_description", "category", "complete_status")
+    VALUES($1, $2, $3);`;
 
-    pool.query(queryText, [req.body.task_description, req.body.complete_status]).then((result) => {
+    pool.query(queryText, [req.body.task_description, req.body.taskType, req.body.complete_status]).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
         console.log('error in tasks POST request', error);

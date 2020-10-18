@@ -1,3 +1,19 @@
 .done {
     text-decoration: line-through;
+    /* can change later */
+    background-color: green;  
+}
+
+.incomplete {
+    background-color: red;
+}
+
+.column {
+    width: 30%;
+    float: left;
+    margin: .75%;
+}
+
+table {
+    border: 1px solid black;
 }
