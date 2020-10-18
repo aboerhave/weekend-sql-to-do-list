@@ -1,9 +1,11 @@
 .done {
     text-decoration: line-through;
+    background-color: green;
 }
 
-
-
+.incomplete {
+    background-color: red;
+}
 
 .column {
     width: 30%;
