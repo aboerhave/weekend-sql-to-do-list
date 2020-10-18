@@ -1,10 +1,14 @@
+body {
+    background-color: rgb(201, 248, 248);
+}
+
 .done {
     text-decoration: line-through;
-    background-color: green;
+    background-color: rgb(147, 224, 147);
 }
 
 .incomplete {
-    background-color: red;
+    background-color: rgb(233, 157, 157);
 }
 
 .column {
@@ -13,6 +17,36 @@
     margin: 1.666667%;
 }
 
-table {
-    border: 1px solid black;
+h2 {
+    text-align: center;
 }
+th {
+    background-color: white;
+}
+th, td {
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+th:first-child {
+    border: 1px solid #000;
+    border-top-left-radius: 8px;
+    border-collapse: collapse;
+}
+th:last-child {
+    border: 1px solid #000;
+    border-top-right-radius: 8px;
+    border-collapse: collapse;
+}
+
+tr:last-child td:first-child {
+    border: 1px solid #000;
+    /* border-bottom-left-radius: 8px; */
+    border-collapse: collapse;
+}
+
+tr:last-child td:last-child {
+    border: 1px solid #000;
+    /* border-bottom-right-radius: 8px; */
+    border-collapse: collapse;
+}
+
