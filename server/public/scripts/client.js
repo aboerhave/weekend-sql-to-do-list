@@ -1,4 +1,4 @@
-// This is the index file for the weekend assignment for week 9 of Prime Digital Academy
+// This is the client.js file for the weekend assignment for week 9 of Prime Digital Academy
 // for Adam Boerhave, to make a to do list app, created 10/16/2020 - 10/18/2020
 
 $(document).ready(onReady);
