@@ -9,7 +9,7 @@ to manipulate the data and send it back and forth to the server and display it o
 to list the task, a dropdown box to select the category for the task, and a dropdown to select the urgency of the task.  There
 are three levels of urgency to choose from and this determines which of the three tables the task is listed under.
 
-The main challenge for the prohect was properly working with a database and inserting, removing, and editing data from it.  
+The main challenge for the project was properly working with a database and inserting, getting, editing, and deleting data from it.  
 The put request was a new component, as that had been learned since the previous project which did use GET and PUT requests.  
 
 The project had an interesting component, in that Bootstrap was requested to be used for styling.  This was a bit challenging to learn, because I had 
@@ -36,11 +36,11 @@ envisioned, which looked and worked much better in the end, anyway.
 ## Installation
 
 The project can be forked and cloned from the Github repository.  The command 'npm install' in the terminal will install the necessary dependancies.  If you wish,
-you may include the command "node server/server.js' as value to a property called 'start' in the object under scripts in the package.json file.  
+you may include the command 'node server/server.js' as value to a property called 'start' in the object under scripts in the package.json file.  
 
 A Postgresql database is required.  The database may be created with the name weekend-to-do-app and the text in the database.sql file may be copied and pasted in the SQL Query section of Postico, and executed.  
 
-At this point, a browser may be send to localhost:5000, and the app should be ready to use.
+At this point, a browser may be sent to localhost:5000, and the app should be ready to use.
 
 ## Usage
 
@@ -68,37 +68,3 @@ the same section.
 - Postgresql
 - Pool
 - Bootstrap
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
