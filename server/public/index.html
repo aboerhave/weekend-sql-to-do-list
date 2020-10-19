@@ -1,30 +1,35 @@
 <!DOCTYPE html>
+<!-- This is the index file for the weekend assignment for week 9 of Prime Digital Academy
+for Adam Boerhave, to make a to do list app, created 10/16/2020 - 10/18/2020 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- jQuery -->
     <script src="vendors/jquery-3.3.1.min.js"></script>
+            <!-- bootstrap js-->
     <script src="scripts/bootstrap.bundle.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
+            <!-- my client file -->
     <script src="scripts/client.js"></script>
+            <!-- bootstrap styles -->
     <link rel="stylesheet" href="styles/bootstrap.css">
+            <!-- my additional styles -->
     <link rel="stylesheet" href="styles/style.css">
     <title>To Do List</title>
 </head>
 <body>
     <h1 class="my-3">To Do List</h1>
-
                             <!-- Input Stuff -->
     <div class="container">
-        <div class="col-sm-1"></div>    <!-- extra space -->
         <div class="form-group">
             <label for="taskInput">New Task to be Completed</label>
+            <!-- max length 500 to match max of database entry -->
             <input type="text" id="taskInput" class="form-control" maxlength="500" autofocus>
         </div>  
-
         <div class="form-group">
             <label for="taskTypeInput">Task Category</label>
-            <select id="taskTypeInput" >
+            <select id="taskTypeInput">
                 <option value="Self">Self</option>
                 <option value="Work">Work</option>
                 <option value="Home">Home</option>
@@ -35,7 +40,7 @@
         </div>    
         <div class="form-group">
             <label for="taskPriorityInput">Task Priority</label>
-            <select id="taskPriorityInput" >
+            <select id="taskPriorityInput">
                 <option value="3">Urgent</option>
                 <option value="2">Moderate</option>
                 <option value="1">Low</option>
@@ -43,7 +48,6 @@
         </div>
         <button id="taskSubmitBtn" class="btn btn-primary btn-sm">Submit New Task</button>
     </div>
-
                                 <!-- Output Stuff -->
     <div class="container">    
         <div class="row">   <!-- one row for first table -->
@@ -51,7 +55,7 @@
                 <h2 class="my-3">Urgent Tasks</h2>
                 <table class="table" id="table3">
                     <thead>
-                        <tr >
+                        <tr>
                             <th>Task Description</th>
                             <th>Category</th>
                             <th>Change Priority Level</th>
