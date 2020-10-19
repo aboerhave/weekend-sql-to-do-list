@@ -78,7 +78,7 @@ function printResults(array) {
             elementToAdd = `<button class="down btn btn-info btn-sm" data-direction="-">↓</button>`;
         }
         else if(table == 2) {
-            elementToAdd = `<button class="down btn btn-info btn-sm" data-direction="-">↓</button> <button class="up btn btn-info btn-sm" data-direction="+">↑</button>`;
+            elementToAdd = `<button class="up btn btn-info btn-sm" data-direction="+">↑</button> <button class="down btn btn-info btn-sm" data-direction="-">↓</button> `;
         }
         else if(table == 1) {
             elementToAdd = `<button class="up btn btn-info btn-sm" data-direction="+">↑</button>`;
@@ -179,5 +179,12 @@ function clearInputs() {
 }
 
 function checkInputs() {
-
+    if($('#taskInput').val().trim() == '' || $('#taskTypeInput').val() == null || $('#taskPriorityInput').val() == null) {
+        console.log('false');
+        
+        return false;
+    }
+    else {
+        return true;
+    }
 }
