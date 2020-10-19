@@ -19,7 +19,7 @@ envisioned, which looked and worked much better in the end, anyway.
 
 ## Screen Shot 
 
-![Screen Shot]('/images/picture.png')
+![Screen Shot](images/picture.png)
 
 
 
