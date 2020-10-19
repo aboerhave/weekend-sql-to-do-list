@@ -35,9 +35,9 @@ router.post('/', (req, res) => {
 
 
 // PUT for changing complete_status
-router.put('/:id', (req, res) => {
+router.put('/done/:id', (req, res) => {
     console.log('req.body.complete_status', req.body.complete_status);
-    
+
         let queryText = `UPDATE "tasks" SET "complete_status" = 'true' WHERE "id" = $1;`;
     
         pool.query(queryText,[req.params.id]).then((result) => {
@@ -49,7 +49,24 @@ router.put('/:id', (req, res) => {
         });
 });
 
-
+// put for changing priority level
+router.put('/level/:id', (req, res) => {
+    console.log('req.body.direction', req.body.direction);
+    let queryText = '';
+    if (req.body.direction == '+') {
+        queryText = `UPDATE "tasks" SET "priority" = "priority" + 1 WHERE "id" = $1;`
+    }
+    else if (req.body.direction == '-') {
+        queryText = `UPDATE "tasks" SET "priority" = "priority" - 1 WHERE "id" = $1;`
+    }
+    pool.query(queryText,[req.params.id]).then((result) => {
+        console.log('result from PUT', result);
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('error in PUT request', error);
+        res.sendStatus(500);
+    });
+})
 
 
 

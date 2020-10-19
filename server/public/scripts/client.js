@@ -3,19 +3,29 @@
 $(document).ready(onReady);
 
 function onReady() {
+    clearInputs();
     // click event listeners
     $('#taskSubmitBtn').on('click', submitTask);   
-    $('#displayTasksUrgent').on('click', '.editBtn', changeStatus);
-    $('#displayTasksUrgent').on('click', '.deleteBtn', deleteFunction);
-    $('#displayTasksModerate').on('click', '.editBtn', changeStatus);
-    $('#displayTasksModerate').on('click', '.deleteBtn', deleteFunction);
-    $('#displayTasksLow').on('click', '.editBtn', changeStatus);
-    $('#displayTasksLow').on('click', '.deleteBtn', deleteFunction);
+    $('#displayTasks3').on('click', '.editBtn', changeStatus);
+    $('#displayTasks3').on('click', '.deleteBtn', deleteFunction);
+    $('#displayTasks2').on('click', '.editBtn', changeStatus);
+    $('#displayTasks2').on('click', '.deleteBtn', deleteFunction);
+    $('#displayTasks1').on('click', '.editBtn', changeStatus);
+    $('#displayTasks1').on('click', '.deleteBtn', deleteFunction);
+    $('#displayTasks3').on('click', '.down', changeLevel);
+    $('#displayTasks3').on('click', '.up', changeLevel);
+    $('#displayTasks2').on('click', '.down', changeLevel);
+    $('#displayTasks2').on('click', '.up', changeLevel);
+    $('#displayTasks1').on('click', '.down', changeLevel);
+    $('#displayTasks1').on('click', '.up', changeLevel);
     getAllTasks();
 }
 
 // POST request
 function submitTask() {
+    if(!checkInputs()) {
+        alert('Please be sure all of the inputs are filled in');
+    }
     // want to take task from text in input text box and 
     //create an object to send to server
     let taskObject = {
@@ -57,16 +67,31 @@ function getAllTasks() {
 
 function printResults(array) {
     let tasks = array;
-    $('#displayTasksUrgent').empty();
-    $('#displayTasksModerate').empty();
-    $('#displayTasksLow').empty();
+    $('#displayTasks3').empty();
+    $('#displayTasks2').empty();
+    $('#displayTasks1').empty();
     for( task of tasks) {
         let table = task.priority;
+        console.log('table', table);
+        let elementToAdd = '';
+        if( table == 3) {
+            elementToAdd = `<button class="down btn btn-info btn-sm" data-direction="-">↓</button>`;
+        }
+        else if(table == 2) {
+            elementToAdd = `<button class="down btn btn-info btn-sm" data-direction="-">↓</button> <button class="up btn btn-info btn-sm" data-direction="+">↑</button>`;
+        }
+        else if(table == 1) {
+            elementToAdd = `<button class="up btn btn-info btn-sm" data-direction="+">↑</button>`;
+        }
+        console.log('elementToAdd', elementToAdd);
+        
+        
         if(task.complete_status == false) {
             $(`#displayTasks${table}`).append(`
                 <tr data-id=${task.id} class="incomplete">    
                     <td>${task.task_description}</td>
                     <td>${task.category}</td>
+                    <td>${elementToAdd}</td>
                     <td><button class="editBtn btn btn-success btn-sm">Task Complete</button></td>
                     <td><button class="deleteBtn btn btn-warning btn-sm">Delete Task</button></td>
                 </tr>
@@ -77,6 +102,7 @@ function printResults(array) {
                 <tr data-id=${task.id} class="done">    
                     <td><p>${task.task_description}<span></span></p></td>
                     <td><p>${task.category}<span></span></p></td>
+                    <td>${elementToAdd}</td>
                     <td></td>
                     <td><button class="deleteBtn btn btn-warning btn-sm">Delete Task</button></td>
                 </tr>
@@ -99,7 +125,7 @@ function changeStatus() {
     // button will be clicked if task is complete
     $.ajax({
         method: 'PUT',
-        url: `/tasks/${taskId}`,
+        url: `/tasks/done/${taskId}`,
         data: dataToSend
     }).then(function (response) {
         console.log('response', response);
@@ -110,6 +136,19 @@ function changeStatus() {
 }
 
 
+function changeLevel() {
+    let dataToSend = {direction: $(this).data("direction")};
+    let taskId = $(this).closest('tr').data('id');
+    $.ajax({
+        method: 'PUT',
+        url: `/tasks/level/${taskId}`,
+        data: dataToSend
+    }).then(function (response) {
+        getAllTasks();
+    }).catch(function (error) {
+        console.log('error in level put', error);    
+    });
+}
 
 
 
@@ -139,33 +178,6 @@ function clearInputs() {
     $('#taskPriorityInput').val('');
 }
 
+function checkInputs() {
 
-
-
-// Extra stuff
-
-// for( task of tasks) {
-//     let table = task.priority;
-//     if(task.complete_status == false) {
-//         $(`#displayTasks${table}`).append(`
-//             <tr data-id=${task.id} class="incomplete">    
-//                 <td>${task.task_description}</td>
-//                 <td>${task.complete_status}</td>
-//                 <td>${task.category}</td>
-//                 <td><button class="editBtn">Task Complete</button></td>
-//                 <td><button class="deleteBtn">Delete Task</button></td>
-//             </tr>
-//         `);
-//     }
-//     else if (task.complete_status == true) {
-//         $(`#displayTasks${table}`).append(`
-//             <tr data-id=${task.id} class="done">    
-//                 <td>${task.task_description}</td>
-//                 <td>${task.complete_status}</td>
-//                 <td>${task.category}</td>
-//                 <td></td>
-//                 <td><button class="deleteBtn">Delete Task</button></td>
-//             </tr>
-//         `);
-//     }
-// }
+}
