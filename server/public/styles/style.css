@@ -1,32 +1,38 @@
+/* This is the index file for the weekend assignment for week 9 of Prime Digital Academy
+for Adam Boerhave, to make a to do list app, created 10/16/2020 - 10/18/2020 */
+
+/* bg image style */
 body {
-    /* background-color: rgb(201, 248, 248); */
     background-image: url('background.png');
     background-size: cover;
 }
 
+/* h1 center */
 h1 {
     text-align: center;
 }
+
+/* text color for completed task */
 .done {
-    /* text-decoration: line-through; */
-    /* background-color: rgb(62, 207, 62); */
     color: blue;
 }
 
+/* text color for incomplete task */
 .incomplete {
-    /* background-color: rgb(216, 63, 63); */
-    /* color: white; */
     color: red;
 }
 
+/* font for words in table */
 table {
     font-size: 1rem;
 }
+
+/* spacing to create red line across completed tasks */
 p {
     position: relative;
-    /* display: inline-block */
 }
 
+/* red line across completed tasks */
 span {
     position: absolute;
     width: 100%;
@@ -35,21 +41,22 @@ span {
     top: 50%;    
 }
 
+/* h2 center */
 h2 {
     text-align: center;
 }
-th {
-    background-color: white;
-}
 
+/* header color for first table */
 #table1 th {
     background-color: rgb(248, 188, 77);
 }
 
+/* header color for second table */
 #table2 th {
     background-color: rgb(252, 252, 39);
 }
 
+/* header color for third table */
 #table3 th {
     background-color: rgb(90, 230, 90);
 }
