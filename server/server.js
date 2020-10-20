@@ -8,8 +8,7 @@ const taskRouter = require('./routes/tasks_router');
 
 // globals
 const app = express();
-const PORT = 5000;
-
+const PORT = process.env.PORT || 5000;
 
 // uses
 app.use(express.static('server/public'));

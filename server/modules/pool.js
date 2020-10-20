@@ -6,7 +6,7 @@ const pg = require('pg');
 // pg setup to connect with db
 const Pool = pg.Pool;
 const pool = new Pool({
-    database: 'weekend-to-do-app',
+    database: process.env.DATABASE_NAME || 'weekend-to-do-app',
     host: 'localhost',
     port: 5432,
     max: 10,
